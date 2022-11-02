@@ -1,0 +1,38 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 250px;
+    margin: 0 0 20px;
+    background-color: cornflowerblue;
+
+}
+
+h2,
+p {
+    text-align: center;
+}
+
+.remove {
+    position: relative;
+    right: 15px;
+    width: 2rem;
+}
+
+img {
+    height: 200px;
+    width: 100%;
+
+}
+
+.likes_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.likes_container button {
+    height: 30px;
+
+}
