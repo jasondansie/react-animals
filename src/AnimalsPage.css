@@ -1,0 +1,15 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 25px;
+}
+
+.search label {
+    margin: 0 10px 0px;
+}

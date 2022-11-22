@@ -2,6 +2,10 @@ import './App.css';
 import Card from './Card';
 import { animals } from './animals';
 import { Component } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import Animals_page from './AnimalsPage';
+import Birds from './Birds';
 
 class App extends Component {
   state = {
@@ -36,7 +40,6 @@ class App extends Component {
   }
 
   render() {
-
     const animalFilter = this.state.animals.filter((animal) => {
       return animal.name.includes(this.state.search);
     });
@@ -52,15 +55,35 @@ class App extends Component {
         />
       );
     });
+
+
     return (
-      <div>
-        <h1>Animals</h1>
-        <div className='search'>
-          <label htmlFor="search">search</label>
-          <input type="text" name="search" onChange={this.searchHandler}></input>
-        </div>
-        <div className='cards'>{animalsList}</div>
-      </div >
+      <BrowserRouter>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/animals">Animals</Link>
+              </li>
+              <li>
+                <Link to="/birds">Birds</Link>
+              </li>
+            </ul>
+          </nav>
+          <main>
+            <Routes>
+              <Route path='/' element={<Home
+                animalsList={animalsList}
+              />} />
+              <Route path='/animals' element={<Animals_page />} />
+              <Route path='/birds' element={<Birds />} />
+            </Routes>
+          </main>
+        </div >
+      </BrowserRouter>
     );
   }
 }
