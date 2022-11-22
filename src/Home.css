@@ -1,0 +1,17 @@
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    width: 100vw;
+}
+
+.images{
+    display: flex;
+    flex-direction: row;
+}
+
+section img{
+    height: 40vh;
+    width: 30vw;
+}
