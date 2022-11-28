@@ -15,15 +15,19 @@ class App extends Component {
   };
 
   render() {
-    return (     
-      <BrowserRouter>       
+    return (
+      <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/animals' element={<AnimalsPage/>} />
+          <Route path='/' element={<Home
+            animals={animals}
+          />} />
+          <Route pathanimals='/animals' element={<AnimalsPage
+            animals={animals}
+          />} />
           <Route path='/birds' element={<Birds />} />
           <Route path='/about' element={<AboutPage />} />
-        </Routes>          
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
     );
   }
 }

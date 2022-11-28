@@ -4,36 +4,36 @@ import { Outlet, Link } from 'react-router-dom';
 import Card from './Card';
 
 const Animals_page = (props) => {
-   
 
-    // const animalsList = animalFilter.map((animal) => {
-    //     return (
-    //       <Card
-    //         key={animal.name}
-    //         name={animal.name}
-    //         likes={animal.likes}
-    //         removeCard={() => this.removeCardHandler(animal.name)}
-    //         addLikes={() => this.addlikeHandler(animal.likes)}
-    //       />
-    //     );
-    //   });
+
+    const animalsList = props.animals.map((animal) => {
+        return (
+            <Card
+                key={animal.name}
+                name={animal.name}
+                likes={animal.likes}
+                removeCard={() => this.removeCardHandler(animal.name)}
+                addLikes={() => this.addlikeHandler(animal.likes)}
+            />
+        );
+    });
     return (
-        
+
         <div>
             <h1>Animals</h1>
             <nav>
                 <ul>
                     <li>
-                    <Link to="/">Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                    <Link to="/animals">Animals</Link>
+                        <Link to="/animals">Animals</Link>
                     </li>
                     <li>
-                    <Link to="/birds">Birds</Link>
+                        <Link to="/birds">Birds</Link>
                     </li>
                     <li>
-                    <Link to="/about">About</Link>
+                        <Link to="/about">About</Link>
                     </li>
                 </ul>
             </nav>
@@ -42,7 +42,7 @@ const Animals_page = (props) => {
                 <input type="text" name="search" onChange={props.searchHandler}></input>
             </div>
             <div className='cards'></div>
-        <Outlet />
+            <Outlet />
         </div>
     );
 }
