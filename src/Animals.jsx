@@ -1,9 +1,9 @@
-import './AnimalsPage.css';
+import './Animals.css';
 import { Outlet, Link } from 'react-router-dom';
 
 import Card from './Card';
 
-const Animals_page = (props) => {
+const Animals = (props) => {
 
 
     const animalsList = props.animals.map((animal) => {
@@ -12,7 +12,7 @@ const Animals_page = (props) => {
                 key={animal.name}
                 name={animal.name}
                 likes={animal.likes}
-                removeCard={() => this.removeCardHandler(animal.name)}
+                // removeCard={() => this.removeCardHandler(animal.name)}
                 addLikes={() => this.addlikeHandler(animal.likes)}
             />
         );
@@ -41,10 +41,10 @@ const Animals_page = (props) => {
                 <label htmlFor="search">search</label>
                 <input type="text" name="search" onChange={props.searchHandler}></input>
             </div>
-            <div className='cards'></div>
+            <div className='cards'>{animalsList}</div>
             <Outlet />
         </div>
     );
 }
 
-export default Animals_page;
+export default Animals;

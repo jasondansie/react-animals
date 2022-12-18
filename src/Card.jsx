@@ -4,8 +4,8 @@ const Card = (props) => {
     return (
         <div className='card'>
             <img
-            src={`https://source.unsplash.com/500x400/?${props.name}`}
-            alt={props.name}
+                src={`https://source.unsplash.com/500x400/?${props.name}`}
+                alt={props.name}
             />
             <button className='remove' onClick={props.removeCard}>X</button>
             <h2>{props.name}</h2>
@@ -15,6 +15,6 @@ const Card = (props) => {
             </div>
         </div>
     );
-  }
-  
-  export default Card;
+}
+
+export default Card;

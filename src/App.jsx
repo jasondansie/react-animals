@@ -1,15 +1,15 @@
 import './App.css';
 import { Component } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { animals } from './animals';
+import { animalsList } from './animalsList';
 import Home from './Home';
-import AnimalsPage from './AnimalsPage';
+import Animals from './Animals';
 import Birds from './Birds';
 import AboutPage from './AboutPage';
 
 class App extends Component {
   state = {
-    animals: animals,
+    animals: animalsList,
     likes: 0,
     search: "",
   };
@@ -19,10 +19,10 @@ class App extends Component {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home
-            animals={animals}
+            animals={animalsList}
           />} />
-          <Route pathanimals='/animals' element={<AnimalsPage
-            animals={animals}
+          <Route path='/animals' element={<Animals
+            animals={animalsList}
           />} />
           <Route path='/birds' element={<Birds />} />
           <Route path='/about' element={<AboutPage />} />
