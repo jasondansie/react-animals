@@ -1,17 +1,27 @@
-section{
+section {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
+
     width: 100vw;
 }
 
-.images{
+.images {
     display: flex;
     flex-direction: row;
 }
 
-section img{
+.home img {
     height: 40vh;
     width: 30vw;
+}
+
+.home div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home label {
+    margin-bottom: 2rem;
 }
